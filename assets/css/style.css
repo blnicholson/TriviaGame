@@ -1,0 +1,67 @@
+body{
+background:url("../images/gameboard3.jpg"), url("../images/triforce.jpg");
+background-repeat: no-repeat;
+background-size: 1000px 800px, 2000px 1000px;
+background-position:center top;
+background-position-y: 75px, 0px;
+background-position-x:350px, 0px;
+  
+
+} 
+
+header{
+    background:white;
+    color:blue;
+    margin-top:25px;
+    text-align:center;
+}
+
+
+
+.startButton{
+    margin-left:550px;
+    margin-top:350px; 
+}
+
+#question{
+    margin-left:500px;
+    margin-top:250px;
+    color:purple;
+}
+.time{
+    background:white;
+}
+h2{
+    margin-left:445px;
+    margin-top:350px;
+    color:yellow;
+}
+h4{
+    margin-left:375px;
+    margin-top:50px;
+    color:yellow;
+}
+img{
+    width:150px;
+    height:150px;
+    margin-left:475px;
+    margin-top:50px;
+}
+#button{
+    margin-left:150px;
+    margin-top:50px;
+    
+}
+#listAnswers{
+    margin-left:650px;
+    margin-top:50px;
+    text-align:center;
+}
+#listAnswers:hover{
+    background-color:red;
+    color:yellow; 
+}
+#select{
+    display:block;
+    padding
+}
