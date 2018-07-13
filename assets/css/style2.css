@@ -2,11 +2,11 @@
     font-family:zeldaFont;
 }
 body{
-
 background:url("../images/background.jpg");
 background-repeat: no-repeat;
 background-size: cover;
-}
+} 
+
 @font-face{
     font-family: zeldaFont;
     src: url("../images/HyliaSerifBeta-Regular.otf");
@@ -22,19 +22,18 @@ header{
 
 .startButton{
     margin-left:450px;
-    margin-top:220px; 
+    margin-top:350px; 
     width:150px;
-    
 }
 
 #question{
     margin-left:350px;
     margin-top:100px;
-    color:navy;
+    color:purple;
 }
 #timer{
     margin-top:125px;
-    margin-left:250px;
+    margin-left:300px;
     margin-bottom:-25px;
 }
 h2{
@@ -42,21 +41,10 @@ h2{
     margin-top:100px;
     color:navy;
 }
-#correct{
-    margin-left:375px;
-}
-#wrongAnswer{
-    margin-left:400px;
-}
-#zelda{
-    margin-left:575px;
-    width:380px;
-    height:120px;
-}
 
 h3{
     margin-left:375px;
-    margin-top:75px;
+    margin-top:175px;
 }
 h4{
     margin-left:375px;
@@ -67,36 +55,31 @@ h4{
 img{
     width:250px;
     height:250px;
-    margin-left:415px;
+    margin-left:475px;
     margin-top:50px;
-}
-#answered{
-    margin-left:35px;
-    text-align:center;
-}
-#timeUp{
-    margin-left:465px;
-    color:navy;
 }
 #button{
     margin-left:150px;
     
 }
-
+/* #listAnswers{
+    margin-left:650px;
+    margin-top:-150px;
+    text-align:center;
+} */
 #listAnswers:hover{
     background-color:red;
     color:yellow; 
 }
 #select{
     margin-left:450px;
-    color:darkgreen;
+    color:black;
     margin-top:25px; 
     width:150px;  
 }
 body,
 .blurred-bg-container .gameCard {
-    
-    margin:0;
+    margin:0
   }
   
   .blurred-bg-container {
@@ -118,12 +101,13 @@ body,
     transform: translate(-50%, -50%);
     overflow: hidden;
   }
-   /* .blurred-bg-container .text {
+  
+  /* .blurred-bg-container .text {
     padding: 16px;
     background: rgba(255, 255, 255, 0.3);
     height: 100%;
     box-sizing: border-box; /* so that padding is included in height */
-} */
+  } */
   
   .blurred-bg-container .blur {
     background: inherit;
@@ -140,9 +124,8 @@ body,
     z-index: -1;
   }
   #startOver{
-      margin-left:465px;
-      margin-top:25px;
+      margin-left:450px;
+      margin-top:50px;
       height:85px;
       width:100px;
   }
-  
