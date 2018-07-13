@@ -6,12 +6,12 @@
 
 //variables
 var userChoice;
-var game = $("#here2")
+var game = $(".gameCard")
 var start;
 
 //set timer to 10
 var timer = 3;
-$("<h3 id ='time'> Time Remaining: " + timer + "</h3>");
+$(".timer").html("<h4 id='timer'>Time Remaining: " + timer);
 //holds correct answered
 var correctCounter = 0;
 //hold incorrect answered
@@ -38,29 +38,45 @@ var triviaQuestions = [{
 
 
 
-
+//Countdown function
 function countdown() {
     timer--;
-
-    // if (timer === 0) {
-    //     alert("time's up!")
-    // }
-    $("#zelda").html(timer);
-
+    $(".timer").html("<h4 id='timer'>Time Remaining: " + timer);
     if (timer === 0) {
         console.log("no time!");
         timeupLoss();
-
     }
 }
-//user chooses correct answer
+//Start Screen Function
+function startScreen() {
+    start = "<p class='startButton'><a  class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>Start Quiz</a></p>";
+    $(".gameCard").html(start);
+}
+startScreen();
+
+function showQuestion() {
+    timeCount = setInterval(countdown, 1000);
+
+    $(".gameCard").html("<h5 id = 'question'>" + triviaQuestions[this.current].question + "</h5>");
+    for (var i = 0; i < triviaQuestions[this.current].answerChoices.length; i++) {
+        game.append("<h5> <button type='button' id='select' class='btn btn-outline-warning'  id='listAnswers'>" + triviaQuestions[this.current].answerChoices[i] + "</button></h5>")
+    }
+}
+
+function showNext() {
+    timer = 3;
+    $(".timer").html("<h4 id='timer'>Time Remaining: " + timer);
+    current++;
+    showQuestion();
+} 
+
 function correctAnswer() {
     clearInterval(timeCount);
     correctCounter++;
     game.html("<h2>You Answered Correctly!</h2>");
     game.append('<img src="' + triviaQuestions[this.current].image + '"/>');
     if (current === triviaQuestions.length - 1) {
-        results();
+        setTimeout(results, 1000 * 5)
     }
     else {
         setTimeout(showNext, 1000 * 4);
@@ -70,14 +86,14 @@ function correctAnswer() {
 function wrongAnswer() {
     clearInterval(timeCount);
     incorrectCounter++;
-    game.html("<h2>You !</h2>");
+    game.html("<h2>Aww! Wrong!</h2>");
     game.append("<h4> The Correct Answer is: " + triviaQuestions[this.current].correctAnswer);
     game.append('<img src="' + triviaQuestions[this.current].image + '"/>');
     if (current === triviaQuestions.length - 1) {
-        results();
+        setTimeout(results, 1000 * 5)
     }
     else {
-        setTimeout(showNext, 1000 * 4);
+        setTimeout(showNext, 1000 * 5);
     }
 
 }
@@ -87,32 +103,23 @@ function timeupLoss() {
     game.html("<h2>Time's Up!</h2>");
     game.append("<h4> The Correct Answer is: " + triviaQuestions[this.current].correctAnswer);
     game.append('<img src="' + triviaQuestions[this.current].image + '"/>');
-    if (current === triviaQuestions.length - 1) {
-        results();
+    if (current === triviaQuestions.length - 1){
+        setTimeout(results, 1000 * 5)
+        
     }
     else {
-        setTimeout(showNext, 1000 * 4);
+        setTimeout(showNext, 1000 * 5);
     }
-}
-function showQuestion() {
-    timeCount = setInterval(countdown, 1000);
-    $("#here2").html("<p id = 'question'>" + triviaQuestions[this.current].question + "</p>");
-    for (var i = 0; i < triviaQuestions[this.current].answerChoices.length; i++) {
-        game.append("<button type='button' id='select' class='btn btn-outline-warning'  id='listAnswers'>" + triviaQuestions[this.current].answerChoices[i] + "</button>")
-    }
-}
-function showNext() {
-    timer = 3;
-    $("#zelda").html(timer);
-    current++;
-    showQuestion();
 }
 
-function startScreen() {
-    start = "<p class='startButton'><a  class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>Start Quiz</a></p>";
-    $("#here2").html(start);
+function results() {
+    game.html("<h3>And The Results Are In: ")
+    game.append("<h4>Correctly Answered: " + correctCounter);
+    game.append("<h4>Answered Wrong: " + incorrectCounter);
+    game.append("<h4>Not Answered: " + unansweredCounter);
+    game.append("<button type='button' class='btn btn-outline-danger' id='startOver'>Danger</button>");
+
 }
-startScreen();
 
 function reset() {
     timer = 3;
@@ -122,31 +129,25 @@ function reset() {
     unansweredCounter = 0;
     showQuestion();
 }
-function results() {
-    game.html("Here are your Results:")
-    game.append("Correctly Answered: " + correctCounter);
-    game.append("Answered Wrong: " + incorrectCounter);
-    game.append("Not Answered: " + unansweredCounter);
-    game.append("<button type='button' class='btn btn-outline-danger' id='startOver'>Danger</button>");
 
-}
+//On Click Events
 $(".startButton").on("click", function () {
     showQuestion();
 });
 
 
-$("#here2").on("click", "#select", function () {
+$(".gameCard").on("click", "#select", function () {
     clearInterval(timeCount)
     userChoice = $(this).text();
     if (userChoice === triviaQuestions[current].correctAnswer) {
         correctAnswer();
     }
     else {
-        wrongAnswer(); 
+        wrongAnswer();
     }
 });
-$("#here2").on("click", "#startOver", function () {
-  reset();
+$(".gameCard").on("click", "#startOver", function () {
+    reset();
 });
 
 

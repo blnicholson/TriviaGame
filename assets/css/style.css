@@ -1,13 +1,17 @@
+*{
+    font-family:zeldaFont;
+}
 body{
-background:url("../images/gameboard3.jpg"), url("../images/triforce.jpg");
+background:url("../images/background.jpg");
 background-repeat: no-repeat;
-background-size: 1000px 800px, 2000px 1000px;
-background-position:center top;
-background-position-y: 75px, 0px;
-background-position-x:350px, 0px;
-  
-
+background-size: cover;
 } 
+
+@font-face{
+    font-family: zeldaFont;
+    src: url("../images/HyliaSerifBeta-Regular.otf");
+    font-size:75px;
+}
 
 header{
     background:white;
@@ -16,30 +20,37 @@ header{
     text-align:center;
 }
 
-
-
 .startButton{
-    margin-left:550px;
+    margin-left:450px;
     margin-top:350px; 
+    width:150px;
 }
 
 #question{
-    margin-left:500px;
-    margin-top:250px;
+    margin-left:350px;
+    margin-top:100px;
     color:purple;
 }
-.time{
-    background:white;
+#timer{
+    margin-top:125px;
+    margin-left:300px;
+    margin-bottom:-25px;
 }
 h2{
-    margin-left:445px;
-    margin-top:350px;
-    color:yellow;
+    margin-left:345px;
+    margin-top:100px;
+    color:navy;
+}
+
+h3{
+    margin-left:375px;
+    margin-top:175px;
 }
 h4{
     margin-left:375px;
     margin-top:50px;
-    color:yellow;
+    color:red;
+    
 }
 img{
     width:150px;
@@ -49,19 +60,73 @@ img{
 }
 #button{
     margin-left:150px;
-    margin-top:50px;
     
 }
-#listAnswers{
+/* #listAnswers{
     margin-left:650px;
-    margin-top:50px;
+    margin-top:-150px;
     text-align:center;
-}
+} */
 #listAnswers:hover{
     background-color:red;
     color:yellow; 
 }
 #select{
-    display:block;
-    padding
+    margin-left:450px;
+    color:black;
+    margin-top:25px; 
+    width:150px;  
 }
+body,
+.blurred-bg-container .gameCard {
+    margin:0
+  }
+  
+  .blurred-bg-container {
+    height: 75vh; /* =h */
+    /* background-size: cover; */
+  }
+  
+  .blurred-bg-container .gameCard {
+    margin-top:-25px;
+    margin-left:-100px;
+    background: inherit;
+    width: 90%; /* =cw */
+    height: 70%; /* =ch */
+    border-radius: 8px;
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%; /* =ct */
+    left: 40%; /* =cl */
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+  }
+  
+  /* .blurred-bg-container .text {
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.3);
+    height: 100%;
+    box-sizing: border-box; /* so that padding is included in height */
+  } */
+  
+  .blurred-bg-container .blur {
+    background: inherit;
+    height: 100vh; /* h */
+    width: 166.667%; /* (100/cw) x 100% */
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(
+      -10%,
+      -30%
+    ); /* (100/cl) x (100-cw) %, (100/ct) x (100-ch) % */
+    filter: blur(20px);
+    z-index: -1;
+  }
+  #startOver{
+      margin-left:450px;
+      margin-top:50px;
+      height:85px;
+      width:100px;
+  }
+  
