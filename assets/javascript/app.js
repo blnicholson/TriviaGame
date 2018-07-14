@@ -40,7 +40,7 @@ var triviaQuestions = [{
     question: "What color is Link's tunic in The Legend Of Zelda?",
     answerChoices: ["Purple", "Teal", "Green"],
     correctAnswer: "Green",
-    image: "assets/images/8bitlink.gif"
+    image: "assets/images/linkShoot.gif"
 
 }, {
     question: "In the Legend of Zelda, Link starts out with how many hearts?",
