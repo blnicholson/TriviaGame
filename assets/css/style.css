@@ -3,9 +3,11 @@
 }
 body{
 
-background:url("../images/background.jpg");
+background: url("../images/zelda3.png"),url("../images/background.jpg");
+background-position-y: 30px, 0px;
+background-position-x: 600px, 0px;
 background-repeat: no-repeat;
-background-size: cover;
+background-size:380px 120px, cover;
 }
 @font-face{
     font-family: zeldaFont;
@@ -21,20 +23,20 @@ header{
 }
 
 .startButton{
-    margin-left:450px;
+    margin-left:525px;
     margin-top:220px; 
     width:150px;
     
 }
 
 #question{
-    margin-left:350px;
+    margin-left:365px;
     margin-top:100px;
     color:navy;
 }
 #timer{
     margin-top:125px;
-    margin-left:250px;
+    margin-left:300px;
     margin-bottom:-25px;
 }
 h2{
@@ -49,6 +51,7 @@ h2{
     margin-left:400px;
 }
 #zelda{
+    margin-top:35px;
     margin-left:575px;
     width:380px;
     height:120px;
@@ -88,15 +91,15 @@ img{
     color:yellow; 
 }
 #select{
-    margin-left:450px;
+    text-align:center;
+    margin-left:435px;
     color:darkgreen;
     margin-top:25px; 
-    width:150px;  
+    width:250px;  
 }
 body,
 .blurred-bg-container .gameCard {
-    
-    margin:0;
+    margin-top:85px;
   }
   
   .blurred-bg-container {
@@ -123,7 +126,7 @@ body,
     background: rgba(255, 255, 255, 0.3);
     height: 100%;
     box-sizing: border-box; /* so that padding is included in height */
-} */
+    */
   
   .blurred-bg-container .blur {
     background: inherit;

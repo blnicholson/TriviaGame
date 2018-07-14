@@ -1,79 +1,79 @@
 
 
-// sound variables
-var gameStartSound = new Audio("assets/audio/treasure.wav");
-var lossSound = new Audio("assets/audio/death.wav");
-var winSound = new Audio("assets/audio/fanFare.wav");
-var resultSound = new Audio("assets/audio/secret.wav");
-var noTimeSound = new Audio("assets/audio/woods.wav");
-//variables
-var userChoice;
-var game = $(".gameCard");
-var start;
-var timer = 30;
+    // sound variables
+    var gameStartSound = new Audio("assets/audio/treasure.wav");
+    var lossSound = new Audio("assets/audio/death.wav");
+    var winSound = new Audio("assets/audio/fanFare.wav");
+    var resultSound = new Audio("assets/audio/secret.wav");
+    var noTimeSound = new Audio("assets/audio/woods.wav");
+    //variables
+    var userChoice;
+    var game = $(".gameCard");
+    var start;
+    var timer = 30;
 
 
-//holds correct answered
-var correctCounter = 0;
-//hold incorrect answered
-var incorrectCounter = 0;
-//hold unanswered 
-var unansweredCounter = 0;
-var current = 0;
-//question object
-var triviaQuestions = [{
-    question: "How many pieces are there to the Triforce?",
-    answerChoices: ["Five", "Three", "Eight",],
-    correctAnswer: "Eight",
-    image: "assets/images/triforce1.gif"
-}, {
-    question: "What is the name of the final boss in the Legend of Zelda?",
-    answerChoices: ["Wario", "Ganon", "King Slime"],
-    correctAnswer: "Ganon",
-    image: "assets/images/ganon.gif"
-}, {
-    question: "What hand does Link primarily use?",
-    answerChoices: ["Left-Handed", "Right-Handed", "Ambidextrous"],
-    correctAnswer: "Left-Handed",
-    image: "assets/images/Link.gif"
-}, {
-    question: "What color is Link's tunic in The Legend Of Zelda?",
-    answerChoices: ["Purple", "Teal", "Green"],
-    correctAnswer: "Green",
-    image: "assets/images/8bitLink.gif"
+    //holds correct answered
+    var correctCounter = 0;
+    //hold incorrect answered
+    var incorrectCounter = 0;
+    //hold unanswered 
+    var unansweredCounter = 0;
+    var current = 0;
+    //question object
+    var triviaQuestions = [{
+        question: "How many pieces are there to the Triforce?",
+        answerChoices: ["Five", "Three", "Eight",],
+        correctAnswer: "Eight",
+        image: "assets/images/triforce1.gif"
+    }, {
+        question: "What is the name of the final boss in the Legend of Zelda?",
+        answerChoices: ["Wario", "Ganon", "King Slime"],
+        correctAnswer: "Ganon",
+        image: "assets/images/ganon.gif"
+    }, {
+        question: "What hand does Link primarily use?",
+        answerChoices: ["Left-Handed", "Right-Handed", "Ambidextrous"],
+        correctAnswer: "Left-Handed",
+        image: "assets/images/Link.gif"
+    }, {
+        question: "What color is Link's tunic in The Legend Of Zelda?",
+        answerChoices: ["Purple", "Teal", "Green"],
+        correctAnswer: "Green",
+        image: "assets/images/8bitLink.gif"
 
-}, {
-    question: "In the Legend of Zelda, Link starts out with how many hearts?",
-    answerChoices: ["Three", "Five", "One"],
-    correctAnswer: "Three",
-    image: "assets/images/lifeHearts.gif"
-}, {
-    question: "What year did the very first Legend of Zelda game come out?",
-    answerChoices: ["1981", "1986", "1999"],
-    correctAnswer: "1986",
-    image: "assets/images/oldSchool.gif"
-}, {
-    question: "The ocarinia is used in which Zelda game?",
-    answerChoices: ["Ocarina of Time", "The Legend of Zelda", "A Link to the Past"],
-    correctAnswer: "Ocarina of Time",
-    image: "assets/images/ocarina.gif"
-}, {
-    question: "In Legend of Zelda, where do you get your first sword?",
-    answerChoices: ["Princess Zelda", "An old woman", "The Old Man in a Cave"],
-    correctAnswer: "The Old Man in a Cave",
-    image: "assets/images/oldMan.gif"
-}, {
-    question: "In what land does the Legend of Zelda take place?",
-    answerChoices: ["Calatia", "Hyrule", "Sacred Land"],
-    correctAnswer: "Hyrule",
-    image: "assets/images/Hyrule.gif"
-}, {
-    question: "What is the currency called in The Legend of Zelda?",
-    answerChoices: ["Gols", "Jewels", "Rupees"],
-    correctAnswer: "Rupees",
-    image: "assets/images/rupees.gif"
-}];
-$(document).ready(function () {
+    }, {
+        question: "In the Legend of Zelda, Link starts out with how many hearts?",
+        answerChoices: ["Three", "Five", "One"],
+        correctAnswer: "Three",
+        image: "assets/images/lifeHearts.gif"
+    }, {
+        question: "What year did the very first Legend of Zelda game come out?",
+        answerChoices: ["1981", "1986", "1999"],
+        correctAnswer: "1986",
+        image: "assets/images/oldSchool.gif"
+    }, {
+        question: "The ocarinia is used in which Zelda game?",
+        answerChoices: ["Ocarina of Time", "The Legend of Zelda", "A Link to the Past"],
+        correctAnswer: "Ocarina of Time",
+        image: "assets/images/ocarina.gif"
+    }, {
+        question: "In Legend of Zelda, where do you get your first sword?",
+        answerChoices: ["Princess Zelda", "An old woman", "The Old Man in a Cave"],
+        correctAnswer: "The Old Man in a Cave",
+        image: "assets/images/oldMan.gif"
+    }, {
+        question: "In what land does the Legend of Zelda take place?",
+        answerChoices: ["Calatia", "Hyrule", "Sacred Land"],
+        correctAnswer: "Hyrule",
+        image: "assets/images/Hyrule.gif"
+    }, {
+        question: "What is the currency called in The Legend of Zelda?",
+        answerChoices: ["Gols", "Jewels", "Rupees"],
+        correctAnswer: "Rupees",
+        image: "assets/images/rupees.gif"
+    }];
+    $(document).ready(function() {
     //Countdown function
     function countdown() {
         timer--;
@@ -165,7 +165,7 @@ $(document).ready(function () {
     }
 
     function reset() {
-        timer = 30;
+        timer = 3;
         current = 0;
         correctCounter = 0;
         incorrectCounter = 0;
