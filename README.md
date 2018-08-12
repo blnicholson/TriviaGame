@@ -14,6 +14,7 @@ This app was created by using the following:
 * jQuery
 
 ## **Game Images**
+
 ![Alt text](assets/images/zeldaTrivia.PNG)
 
 
